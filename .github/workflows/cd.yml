@@ -7,6 +7,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    if: contains(github.event.head_commit.message, '[deploy]') || github.event_name == 'workflow_dispatch'
     steps:
       - uses: actions/checkout@v3
         with:
@@ -55,7 +56,7 @@ jobs:
             echo "conn str is $PG_CONN_STR"
             
             # TODO remove this
-            docker login -u ${{env.DOCKER_USER}} -p ${{secrets.DOCKER_PAT}}
+            docker login -u ${{env.DOCKER_USER}} -p ${{env.DOCKER_PAT}}
             
             docker compose pull
             docker compose down --remove-orphans
