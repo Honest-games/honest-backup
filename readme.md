@@ -1,4 +1,4 @@
 ## Docker image build and push
 ```bash
-docker build -t logotipiwe/debian-backuper:latest . --push
+docker buildx build --platform linux/amd64,linux/arm64 -t logotipiwe/debian-backuper:latest . --push
 ```

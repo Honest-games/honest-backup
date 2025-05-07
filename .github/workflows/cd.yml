@@ -54,6 +54,9 @@ jobs:
             
             echo "conn str is $PG_CONN_STR"
             
+            # TODO remove this
+            docker login -u ${{env.DOCKER_USER}} -p ${{secrets.DOCKER_PAT}}
+            
             docker compose pull
             docker compose down --remove-orphans
             docker compose up -d
