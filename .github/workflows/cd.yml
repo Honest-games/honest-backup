@@ -50,7 +50,7 @@ jobs:
             export PG_PASS=${{env.PG_PASS}}
             export TG_BOT_TOKEN=${{env.PG_BACKUP_TG_BOT_TOKEN}}
             export PG_BACKUP_TG_CHAT_ID=${{env.PG_BACKUP_TG_CHAT_ID}}
-            export PG_BACKUP_SCHEDULE=${{env.PG_BACKUP_SCHEDULE}}
+            export PG_BACKUP_SCHEDULE="${{env.PG_BACKUP_SCHEDULE}}"
             
             cd /honest/honest-backup
             
