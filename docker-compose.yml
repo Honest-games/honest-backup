@@ -7,7 +7,7 @@ services:
       - PG_CONN_STR=${PG_CONN_STR}
       - TG_BOT_TOKEN=${TG_BOT_TOKEN}
       - PG_BACKUP_TG_CHAT_ID=${PG_BACKUP_TG_CHAT_ID}
-      - PG_BACKUP_SCHEDULE="${PG_BACKUP_SCHEDULE}"
+      - PG_BACKUP_SCHEDULE=${PG_BACKUP_SCHEDULE}
     networks:
       - dc-net
     volumes:
