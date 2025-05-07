@@ -1,0 +1,18 @@
+services:
+  pg_backup_bot:
+    container_name: bg_backup_bot
+    image: logotipiwe/debian-backuper:latest
+    environment:
+      - PG_PASS=${PG_PASS}
+      - PG_CONN_STR=${PG_CONN_STR}
+      - TG_BOT_TOKEN=${TG_BOT_TOKEN}
+      - PG_BACKUP_TG_CHAT_ID=${PG_BACKUP_TG_CHAT_ID}
+      - PG_BACKUP_SCHEDULE=0 12 * * *
+    networks:
+      - dc-net
+    volumes:
+      - ./src:/app/src
+
+networks:
+  dc-net:
+    external: true

@@ -1,0 +1,1 @@
+${PG_BACKUP_SCHEDULE} cd /app/src/ && ./pg_backup_and_send.sh >> /var/log/cron.log 2>&1
